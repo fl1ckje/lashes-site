@@ -42,9 +42,9 @@ src/
 
 ## GitHub Pages
 
-1. Залить проект в репозиторий (ветка `main`).
+1. Залить проект в репозиторий (ветка `master`).
 2. Settings → Pages → Source: **GitHub Actions**.
-3. Каждый push в `main` запускает `.github/workflows/deploy.yml` и публикует `dist/`.
+3. Каждый push в `master` запускает `.github/workflows/deploy.yml` и публикует `dist/`.
 
 `base: './'` в `vite.config.js` — сайт работает и на `user.github.io`, и на `user.github.io/repo/`.
 После первого `npm install` закоммитьте `package-lock.json` и при желании замените в workflow
