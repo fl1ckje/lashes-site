@@ -1,0 +1,153 @@
+@import "tailwindcss";
+
+/* ───────── Тема ─────────
+   Семантические цвета заданы переменными в :root и переопределяются
+   при prefers-color-scheme: dark. В компонентах используются только
+   токены (bg-page, text-muted, border-line…), поэтому dark: нигде не дублируется. */
+
+:root {
+  --page: #fffdf8;
+  --ink: #252a31;
+  --muted: #626d78;
+  --soft: #475d6a;
+  --faint: #6e8793;
+  --line: #cdd9de;
+  --rule: #b5c1bf;
+  --tint: #dceef7;
+  --hero-fade: #deeff8;
+  --tint-line: #a2c1ce;
+  --glass: #ffffff7a;
+  --cream: #f7f3ec;
+  --works: #f2f5f5;
+  --surface: #ffffff;
+  --surface-blue: #edf6fa;
+  --surface-gray: #f3f5f4;
+  --header: #f9fbf9ee;
+  --menu: #f4f8fa;
+  --btn: #111519;
+  --btn-fg: #ffffff;
+  --accent: #477d96;
+  --accent-soft: #537a8d;
+  --quote: #3e5b6a;
+  --footer: #111519;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #11161a;
+    --ink: #e4eaee;
+    --muted: #9aa7b1;
+    --soft: #b4c2cb;
+    --faint: #88a4b2;
+    --line: #2c373f;
+    --rule: #3a464d;
+    --tint: #1a2a33;
+    --hero-fade: #1a2a33;
+    --tint-line: #355260;
+    --glass: #ffffff0d;
+    --cream: #161c20;
+    --works: #141a1e;
+    --surface: #171e23;
+    --surface-blue: #192832;
+    --surface-gray: #161b1f;
+    --header: #11161aee;
+    --menu: #161d22;
+    --btn: #dceef7;
+    --btn-fg: #111519;
+    --accent: #8cc2da;
+    --accent-soft: #9cc7da;
+    --quote: #a9c8d6;
+    --footer: #0b0f12;
+  }
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-soft: var(--soft);
+  --color-faint: var(--faint);
+  --color-line: var(--line);
+  --color-rule: var(--rule);
+  --color-tint: var(--tint);
+  --color-tint-line: var(--tint-line);
+  --color-glass: var(--glass);
+  --color-cream: var(--cream);
+  --color-works: var(--works);
+  --color-surface: var(--surface);
+  --color-surface-blue: var(--surface-blue);
+  --color-surface-gray: var(--surface-gray);
+  --color-header: var(--header);
+  --color-menu: var(--menu);
+  --color-btn: var(--btn);
+  --color-btn-fg: var(--btn-fg);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-quote: var(--quote);
+  --color-footer: var(--footer);
+}
+
+/* Фиксированные цвета (одинаковы в обеих темах) и общие токены */
+@theme {
+  /* Брейкпоинты как в исходнике: 490 / 790 / 1060 (max-sm / max-md / max-lg) */
+  --breakpoint-sm: 491px;
+  --breakpoint-md: 791px;
+  --breakpoint-lg: 1061px;
+
+  --font-sans: "Helvetica Neue", Arial, sans-serif;
+  --font-serif: Georgia, "Times New Roman", serif;
+
+  --color-sky: #dceef7;
+  --color-paper: #fffdf8;
+  --color-night: #111519;
+  --color-deep: #252a31;
+  --color-edu-line: #4d5961;
+  --color-edu-rule: #67757f;
+  --color-edu-accent: #a8cfdd;
+  --color-edu-card: #303b43;
+
+  --shadow-soft: 0 26px 90px #22334419;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    color-scheme: light dark;
+  }
+  body {
+    @apply bg-page text-ink antialiased;
+    line-height: 1.52;
+  }
+}
+
+/* Ширина контента */
+@utility container-x {
+  width: min(1180px, calc(100% - 72px));
+  margin-inline: auto;
+  @media (max-width: 1060px) {
+    width: calc(100% - 46px);
+  }
+  @media (max-width: 490px) {
+    width: calc(100% - 34px);
+  }
+}
+
+/* Вертикальные отступы секции */
+@utility section-y {
+  padding-block: 106px;
+  @media (max-width: 790px) {
+    padding-block: 73px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  ::before,
+  ::after {
+    transition: none !important;
+    animation: none !important;
+  }
+}

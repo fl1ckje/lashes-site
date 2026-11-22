@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 63" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round">
+  <path pathLength="1" d="M10 40 Q86 63 165 28" />
+  <path pathLength="1" style="animation-delay:0.00s" d="M10.0 40.0 q-6.0 -4 -9.0 -12.0" />
+  <path pathLength="1" style="animation-delay:0.04s" d="M16.7 41.4 q-5.0 -4 -7.4 -13.7" />
+  <path pathLength="1" style="animation-delay:0.07s" d="M23.5 42.7 q-3.9 -4 -5.9 -15.5" />
+  <path pathLength="1" style="animation-delay:0.11s" d="M30.2 44.0 q-2.9 -4 -4.3 -17.2" />
+  <path pathLength="1" style="animation-delay:0.14s" d="M37.0 45.2 q-1.8 -4 -2.7 -18.8" />
+  <path pathLength="1" style="animation-delay:0.18s" d="M43.7 46.2 q-0.8 -4 -1.2 -20.3" />
+  <path pathLength="1" style="animation-delay:0.21s" d="M50.4 47.1 q0.3 -4 0.4 -21.8" />
+  <path pathLength="1" style="animation-delay:0.25s" d="M57.2 47.8 q1.3 -4 2.0 -23.1" />
+  <path pathLength="1" style="animation-delay:0.28s" d="M63.9 48.3 q2.3 -4 3.5 -24.3" />
+  <path pathLength="1" style="animation-delay:0.32s" d="M70.7 48.5 q3.4 -4 5.1 -25.3" />
+  <path pathLength="1" style="animation-delay:0.35s" d="M77.4 48.5 q4.4 -4 6.7 -26.2" />
+  <path pathLength="1" style="animation-delay:0.39s" d="M84.1 48.2 q5.5 -4 8.2 -26.9" />
+  <path pathLength="1" style="animation-delay:0.42s" d="M90.9 47.7 q6.5 -4 9.8 -27.5" />
+  <path pathLength="1" style="animation-delay:0.46s" d="M97.6 46.9 q7.6 -4 11.3 -27.8" />
+  <path pathLength="1" style="animation-delay:0.49s" d="M104.3 45.9 q8.6 -4 12.9 -28.0" />
+  <path pathLength="1" style="animation-delay:0.53s" d="M111.1 44.6 q9.7 -4 14.5 -28.0" />
+  <path pathLength="1" style="animation-delay:0.56s" d="M117.8 43.1 q10.7 -4 16.0 -27.7" />
+  <path pathLength="1" style="animation-delay:0.60s" d="M124.6 41.4 q11.7 -4 17.6 -27.3" />
+  <path pathLength="1" style="animation-delay:0.63s" d="M131.3 39.4 q12.8 -4 19.2 -26.8" />
+  <path pathLength="1" style="animation-delay:0.67s" d="M138.0 37.4 q13.8 -4 20.7 -26.0" />
+  <path pathLength="1" style="animation-delay:0.70s" d="M144.8 35.1 q14.9 -4 22.3 -25.1" />
+  <path pathLength="1" style="animation-delay:0.74s" d="M151.5 32.8 q15.9 -4 23.9 -24.0" />
+  <path pathLength="1" style="animation-delay:0.77s" d="M158.3 30.4 q17.0 -4 25.4 -22.8" />
+  <path pathLength="1" style="animation-delay:0.81s" d="M165.0 28.0 q18.0 -4 27.0 -21.4" />
+</svg>
