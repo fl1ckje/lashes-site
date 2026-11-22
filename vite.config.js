@@ -6,7 +6,7 @@ import svgLoader from 'vite-svg-loader'
 
 export default defineConfig({
   // Относительный base: сборка работает и на username.github.io, и на username.github.io/repo/
-  base: './',
+  base: '/lashes-site/', // base: './',
   plugins: [vue(), tailwindcss(), svgLoader({ svgo: false })],
   resolve: {
     alias: { '@': fileURLToPath(new URL('./src', import.meta.url)) },
