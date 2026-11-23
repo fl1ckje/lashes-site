@@ -11,7 +11,7 @@ import { FAQ_GROUPS } from '@/data/faq'
       <template #title>Можно без<br />сложных слов?</template>
     </SectionHead>
 
-    <div class="mx-auto max-w-[930px]">
+    <div class="mx-auto max-w-232.5">
       <template v-for="group in FAQ_GROUPS" :key="group.title">
         <h3 class="mt-7 mb-3 text-[1.17em] font-bold">{{ group.title }}</h3>
         <FaqItem v-for="item in group.items" :key="item.q" :question="item.q" :answer="item.a" />

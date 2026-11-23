@@ -2,17 +2,21 @@
 import { ref } from 'vue'
 import ImageLightbox from './ImageLightbox.vue'
 
-const props = defineProps({
-  /** [{ src, alt, w, h, caption? }] */
+defineProps({
+  /** [{ src, alt, caption?, wide? }] */
   photos: { type: Array, required: true },
-  /** 'square' (1:1) | 'portrait' (3:4) */
-  layout: { type: String, default: 'square' },
+  /** колонок на десктопе / на телефоне */
+  cols: { type: Number, default: 4 },
+  colsMobile: { type: Number, default: 2 },
+  /** пропорции ячейки: ширина / высота */
+  ratio: { type: Number, default: 1 },
 })
 
 const current = ref(null)
 const origin = ref(null)
 
 function open(index, event) {
+  // откуда «вылетает» увеличенное фото
   const r = event.currentTarget.getBoundingClientRect()
   origin.value = { x: r.left + r.width / 2, y: r.top + r.height / 2 }
   current.value = index
@@ -20,52 +24,34 @@ function open(index, event) {
 </script>
 
 <template>
-  <!-- 
-    grid-flow-row-dense помогает широкому кадру занимать пустые места.
-    Если он стоит не в конце ряда, он автоматически поднимется выше.
+  <!--
+    Сетка одинаковых ячеек. Горизонтальный кадр (wide) занимает две колонки:
+    на десктопе тянется на высоту ряда, на телефоне (один в ряду) получает свою пропорцию.
   -->
   <ul
-    :class="[
-      'grid grid-flow-row-dense gap-2.5',
-      layout === 'portrait' ? 'grid-cols-4 max-md:grid-cols-2' : 'grid-cols-5 max-md:grid-cols-2',
-    ]"
+    class="grid grid-cols-[repeat(var(--cols),minmax(0,1fr))] gap-2.5 max-md:grid-cols-[repeat(var(--cols-m),minmax(0,1fr))]"
+    :style="{ '--cols': cols, '--cols-m': colsMobile, '--wide-ratio': ratio * 2 }"
   >
     <li
       v-for="(p, i) in photos"
       :key="p.src"
-      :class="[
-        'group relative overflow-hidden bg-surface-gray',
-        // Если фото горизонтальное — занимает 2 колонки и имеет точную пропорцию
-        p.w > p.h
-          ? (layout === 'portrait' ? 'col-span-2 aspect-3/2' : 'col-span-2 aspect-2/1')
-          // Если вертикальное или квадратное — занимает 1 колонку
-          : (layout === 'portrait' ? 'col-span-1 aspect-3/4' : 'col-span-1 aspect-square')
-      ]"
+      :class="['relative overflow-hidden', p.wide && 'col-span-2 max-md:aspect-(--wide-ratio)']"
+      :style="p.wide ? undefined : { aspectRatio: ratio }"
     >
       <button
         type="button"
-        class="absolute inset-0 h-full w-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
+        class="absolute inset-0 block size-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-2 focus-visible:outline-accent"
         :aria-label="`Увеличить фото ${i + 1}`"
         @click="open(i, $event)"
       >
-        <!-- object-cover гарантирует, что фото идеально заполнит ячейку без искажений -->
-        <img
-          :src="p.src"
-          :alt="p.alt"
-          :width="p.w"
-          :height="p.h"
-          loading="lazy"
-          class="block h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-        />
+        <img :src="p.src" :alt="p.alt" loading="lazy" class="size-full object-cover" />
       </button>
-
-      <!-- Подпись поверх фото, чтобы не влиять на сетку -->
-      <figcaption
+      <span
         v-if="p.caption"
-        class="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/70 via-black/20 to-transparent px-3 pb-2.5 pt-8 text-xs leading-[1.4] text-white"
+        class="pointer-events-none absolute inset-x-0 bottom-0 bg-linear-to-t from-black/65 to-transparent px-3 pt-10 pb-2.5 text-xs leading-[1.3] text-white"
       >
         {{ p.caption }}
-      </figcaption>
+      </span>
     </li>
   </ul>
 

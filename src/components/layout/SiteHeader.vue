@@ -7,11 +7,11 @@ const open = ref(false)
 </script>
 
 <template>
-  <header class="sticky top-0 z-[55] border-b border-line bg-header backdrop-blur-[18px]">
-    <div class="container-x flex h-20 items-center justify-between gap-4 max-sm:h-[68px]">
-      <a href="#top" class="flex min-w-[185px] flex-col leading-[1.1]">
+  <header class="sticky top-0 z-55 border-b border-line bg-header backdrop-blur-[18px]">
+    <div class="container-x flex h-20 items-center justify-between gap-4 max-sm:h-17">
+      <a href="#top" class="flex min-w-46.25 flex-col leading-[1.1]">
         <strong class="font-serif text-[29px] font-normal tracking-[-.065em] max-sm:text-[25px]">Делаем красиво.</strong>
-        <span class="mt-[7px] text-[9px] tracking-[.14em] text-muted uppercase max-sm:text-[8px]">
+        <span class="mt-1.75 text-[9px] tracking-[.14em] text-muted uppercase max-sm:text-[8px]">
           Школа-студия оформления взгляда · Челябинск
         </span>
       </a>
@@ -21,7 +21,7 @@ const open = ref(false)
         aria-label="Основная навигация"
         :class="[
           'flex items-center gap-6 text-xs font-[650] max-lg:gap-3',
-          'max-md:absolute max-md:inset-x-0 max-md:top-20 max-md:flex-col max-md:items-start max-md:border-b max-md:border-line max-md:bg-menu max-md:px-[25px] max-md:pt-[22px] max-md:pb-7 max-md:shadow-soft max-sm:top-[68px]',
+          'max-md:absolute max-md:inset-x-0 max-md:top-20 max-md:flex-col max-md:items-start max-md:border-b max-md:border-line max-md:bg-menu max-md:px-6.25 max-md:pt-5.5 max-md:pb-7 max-md:shadow-soft max-sm:top-17',
           open ? '' : 'max-md:hidden',
         ]"
       >
@@ -34,7 +34,7 @@ const open = ref(false)
 
       <button
         type="button"
-        class="hidden min-h-[38px] min-w-[38px] cursor-pointer text-[25px] max-md:block"
+        class="hidden min-h-9.5 min-w-9.5 cursor-pointer text-[25px] max-md:block"
         aria-controls="menu"
         :aria-expanded="open"
         :aria-label="open ? 'Закрыть меню' : 'Открыть меню'"

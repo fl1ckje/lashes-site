@@ -7,13 +7,13 @@ defineProps({ eyebrow: { type: String, required: true } })
 
 <template>
   <div
-    class="mb-[38px] flex items-end justify-between gap-[35px] max-md:flex-col max-md:items-start max-md:gap-[7px]"
+    class="mb-9.5 flex items-end justify-between gap-8.75 max-md:flex-col max-md:items-start max-md:gap-1.75"
   >
     <div>
       <Eyebrow>{{ eyebrow }}</Eyebrow>
       <SectionTitle><slot name="title" /></SectionTitle>
     </div>
-    <p v-if="$slots.default" class="max-w-[370px] text-[15px] leading-[1.56] text-muted max-md:max-w-[620px]">
+    <p v-if="$slots.default" class="max-w-92.5 text-[15px] leading-[1.56] text-muted max-md:max-w-155">
       <slot />
     </p>
   </div>

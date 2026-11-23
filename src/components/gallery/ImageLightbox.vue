@@ -155,7 +155,7 @@ function onBackdropClick() {
         role="dialog"
         aria-modal="true"
         aria-label="Просмотр фотографии"
-        class="fixed inset-0 z-[100] flex touch-pan-y items-center justify-center bg-page/60 outline-none backdrop-blur-xl select-none"
+        class="fixed inset-0 z-100 flex touch-pan-y items-center justify-center bg-page/60 outline-none backdrop-blur-xl select-none"
         :style="zoomVars"
         @click.self="onBackdropClick"
         @pointerdown="onDown"

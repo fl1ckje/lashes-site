@@ -27,8 +27,12 @@ const groups = GALLERIES.map((g) => ({
       <h3 :id="group.id" class="mt-[2em] mb-3.75 scroll-mt-23.75 font-serif text-[36px] leading-[normal]">
         {{ group.name }}
       </h3>
-      <PhotoGallery :photos="group.photos"
-      :layout="group.id === 'works-anastasia' ? 'square' : 'portrait'" />
+      <PhotoGallery
+        :photos="group.photos"
+        :cols="group.cols"
+        :cols-mobile="group.colsMobile"
+        :ratio="group.ratio"
+      />
     </template>
   </BaseSection>
 </template>

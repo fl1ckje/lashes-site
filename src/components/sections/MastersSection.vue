@@ -12,7 +12,7 @@ import { MASTERS } from '@/data/masters'
       Посмотри работы каждого мастера. В онлайн-записи можно сравнить цены и выбрать удобное время.
     </SectionHead>
 
-    <div class="grid grid-cols-2 gap-[22px] max-md:grid-cols-1">
+    <div class="grid grid-cols-2 gap-5.5 max-md:grid-cols-1">
       <MasterCard v-for="master in MASTERS" :key="master.id" :master="master" />
     </div>
   </BaseSection>

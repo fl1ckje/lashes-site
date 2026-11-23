@@ -14,11 +14,11 @@ import { SERVICES } from '@/data/home'
       От эффекта «свои, только лучше» до выразительных, необычных форм. Обсудим всё до процедуры.
     </SectionHead>
 
-    <div class="grid grid-cols-2 gap-[17px] max-md:grid-cols-1">
+    <div class="grid grid-cols-2 gap-4.25 max-md:grid-cols-1">
       <ServiceCard v-for="service in SERVICES" :key="service.counter" :service="service" />
     </div>
 
-    <div class="mt-[34px]">
+    <div class="mt-8.5">
       <AppButton :href="BOOKING_URL" external>Выбрать мастера и время ↗</AppButton>
     </div>
   </BaseSection>

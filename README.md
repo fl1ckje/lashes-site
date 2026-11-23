@@ -29,10 +29,10 @@ src/
 
 ## Как менять
 
-- **Тексты, цены, ссылки** — в `src/data/*.js`, шаблоны трогать не нужно.
-- **Новое фото в портфолио** — положить `.webp` в `src/assets/img/` и добавить строку
-  `photo('имя.webp', ширина, высота)` в `src/data/gallery.js`.
-- **Цвета** — токены в `src/style.css` (`:root` и блок `prefers-color-scheme: dark`).
+- **Тексты, цены, ссылки** - в `src/data/*.js`, шаблоны трогать не нужно.
+- **Новое фото в портфолио** - положить `.webp` в `src/assets/img/` и добавить строку
+  `photo('имя.webp')` в `src/data/gallery.js` (для горизонтального кадра - `{ wide: true }`, он займёт две ячейки; число колонок и пропорции ячейки задаются у галереи). Подбирайте порядок так, чтобы ряды закрывались без пустых мест.
+- **Цвета** - токены в `src/style.css` (`:root` и блок `prefers-color-scheme: dark`).
 
 ## Тема
 
@@ -43,9 +43,9 @@ src/
 ## GitHub Pages
 
 1. Залить проект в репозиторий (ветка `master`).
-2. Settings → Pages → Source: **GitHub Actions**.
+2. Settings --> Pages --> Source: **GitHub Actions**.
 3. Каждый push в `master` запускает `.github/workflows/deploy.yml` и публикует `dist/`.
 
-`base: './'` в `vite.config.js` — сайт работает и на `user.github.io`, и на `user.github.io/repo/`.
+`base: '/lashes-site/'` в `vite.config.js` - сайт работает на `user.github.io/lashes-site`. При использовании домена заменить на `base: './'`
 После первого `npm install` закоммитьте `package-lock.json` и при желании замените в workflow
 `npm install` на `npm ci`.

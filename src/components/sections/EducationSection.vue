@@ -10,8 +10,8 @@ import { COURSES, COURSE_PICKER, EDU_PROTOCOL, EDU_VALUES } from '@/data/educati
 </script>
 
 <template>
-  <BaseSection id="education" class="bg-deep pt-[106px] pb-[100px] text-[#f6f8f7] max-md:py-[73px]">
-    <div class="grid grid-cols-[1.1fr_.9fr] items-end gap-[60px] max-md:grid-cols-1 max-md:gap-[25px]">
+  <BaseSection id="education" class="bg-deep pt-26.5 pb-25 text-[#f6f8f7] max-md:py-18.25">
+    <div class="grid grid-cols-[1.1fr_.9fr] items-end gap-15 max-md:grid-cols-1 max-md:gap-6.25">
       <div>
         <Eyebrow dash class="text-edu-accent">Школа Анастасии Самойловой</Eyebrow>
         <SectionTitle size="edu">Техника становится<br /><span class="text-[#bbddec]">твоим навыком</span></SectionTitle>
@@ -22,34 +22,34 @@ import { COURSES, COURSE_PICKER, EDU_PROTOCOL, EDU_VALUES } from '@/data/educati
       </p>
     </div>
 
-    <nav class="my-6 leading-[1.5]" aria-label="Выбор курса">
+    <nav class="my-6 leading-normal" aria-label="Выбор курса">
       <p class="mb-2"><strong>Что хочешь освоить?</strong></p>
       <PillLink v-for="link in COURSE_PICKER" :key="link.href" :href="link.href">{{ link.label }}</PillLink>
     </nav>
 
     <div class="mt-12 grid grid-cols-4 gap-3.5 max-lg:grid-cols-2 max-sm:gap-2">
-      <div v-for="v in EDU_VALUES" :key="v.digit" class="min-h-[140px] border border-edu-line p-5 max-sm:min-h-[135px] max-sm:p-[13px]">
+      <div v-for="v in EDU_VALUES" :key="v.digit" class="min-h-35 border border-edu-line p-5 max-sm:min-h-33.75 max-sm:p-3.25">
         <div class="font-serif text-2xl leading-[normal] text-edu-accent">{{ v.digit }}</div>
-        <p class="mt-[13px] text-[13px] text-[#e1e5e6] max-sm:text-[11px]">{{ v.text }}</p>
+        <p class="mt-3.25 text-[13px] text-[#e1e5e6] max-sm:text-[11px]">{{ v.text }}</p>
       </div>
     </div>
 
-    <div class="mt-[25px] grid grid-cols-3 gap-[15px] max-md:grid-cols-1">
+    <div class="mt-6.25 grid grid-cols-3 gap-3.75 max-md:grid-cols-1">
       <CourseCard v-for="course in COURSES" :key="course.id" :course="course" />
     </div>
 
-    <div class="mt-12 grid grid-cols-3 gap-5 border-t border-edu-rule pt-[27px] max-md:grid-cols-1">
+    <div class="mt-12 grid grid-cols-3 gap-5 border-t border-edu-rule pt-6.75 max-md:grid-cols-1">
       <div v-for="step in EDU_PROTOCOL" :key="step.title">
-        <h4 class="mb-[11px] font-serif text-[25px] leading-[normal] text-[#d7eef8]">{{ step.title }}</h4>
+        <h4 class="mb-2.75 font-serif text-[25px] leading-[normal] text-[#d7eef8]">{{ step.title }}</h4>
         <p class="text-[13px] leading-[1.65] text-[#ced7dc]">{{ step.text }}</p>
       </div>
     </div>
 
-    <div class="mt-[35px] flex flex-wrap items-center justify-between gap-5 border border-edu-rule px-[27px] py-[22px]">
+    <div class="mt-8.75 flex flex-wrap items-center justify-between gap-5 border border-edu-rule px-6.75 py-5.5">
       <div>
         <Eyebrow class="text-edu-accent">Уже работаешь мастером?</Eyebrow>
         <h3 class="my-2 font-serif text-[32px] tracking-[-.047em]">Повышение квалификации за 1 день</h3>
-        <p class="max-w-[650px] text-[13px] text-[#d3dce0]">
+        <p class="max-w-162.5 text-[13px] text-[#d3dce0]">
           Разбираем один выбранный навык: отступ, направление, скорость, клей, ряды или моделирование. Работа на модели
           и конкретные правки по твоей технике.
         </p>

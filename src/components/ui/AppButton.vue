@@ -24,7 +24,7 @@ const linkAttrs = computed(() => (props.external ? { target: '_blank', rel: 'noo
     :href="href"
     v-bind="linkAttrs"
     :class="[
-      'inline-flex items-center justify-center gap-[11px] rounded-full border px-[23px] py-[15px] text-[13px] font-[680] whitespace-nowrap transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_#11151924]',
+      'inline-flex items-center justify-center gap-2.75 rounded-full border px-5.75 py-3.75 text-[13px] font-[680] whitespace-nowrap transition duration-200 hover:-translate-y-0.5 hover:shadow-[0_8px_22px_#11151924]',
       variants[variant],
     ]"
   >
